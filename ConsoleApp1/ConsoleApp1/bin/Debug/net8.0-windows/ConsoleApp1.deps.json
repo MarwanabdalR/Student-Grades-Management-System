@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "ConsoleApp1/1.0.0": {
         "dependencies": {
-          "FSharp.Core": "9.0.100",
+          "FSharp.Core": "8.0.200",
           "Newtonsoft.Json": "13.0.3",
           "System.Drawing.Common": "9.0.0",
           "System.Reactive.Windows.Forms": "6.0.1"
@@ -17,11 +17,11 @@
           "ConsoleApp1.dll": {}
         }
       },
-      "FSharp.Core/9.0.100": {
+      "FSharp.Core/8.0.200": {
         "runtime": {
           "lib/netstandard2.1/FSharp.Core.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.1.24.52202"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.2.24.10803"
           }
         },
         "resources": {
@@ -134,12 +134,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FSharp.Core/9.0.100": {
+    "FSharp.Core/8.0.200": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ye8yagHGsH08H2Twno5GRWkSbrMtxK/SWiHuPcF+3nODpW65/VJ8RO0aWxp8n9+KQbmahg90wAEL3TEXjF0r6A==",
-      "path": "fsharp.core/9.0.100",
-      "hashPath": "fsharp.core.9.0.100.nupkg.sha512"
+      "sha512": "sha512-U016Y0NhtIEQvbmxf6Sff9lx7PTSGEFctA/kLrJr9MvNfKwjrzlK/4C2V1StgsapegWeGYW6K8Zd/D6vc9C4Yw==",
+      "path": "fsharp.core/8.0.200",
+      "hashPath": "fsharp.core.8.0.200.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/9.0.0": {
       "type": "package",

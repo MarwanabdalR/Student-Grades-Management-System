@@ -299,6 +299,13 @@ let updateViewerPanel() =
     let avg, high, low, passRate = getClassStatistics students
     statisticsLabel.Text <- sprintf "Class Avg: %.2f, High: %d, Low: %d, Pass Rate: %.2f%%" avg high low passRate
 
+// Function to clear input fields
+let clearInputFields () =
+    txtID.Clear()
+    txtName.Clear()
+    txtGrades.Clear()
+
+// Add interactions
 btnAdd.Click.Add(fun _ -> 
     if isAdmin then
         try
@@ -309,12 +316,13 @@ btnAdd.Click.Add(fun _ ->
             MessageBox.Show("Student added successfully!") |> ignore
             updateViewerPanel()
             saveData()
+            clearInputFields() // Clear input fields after adding
         with
         | _ -> MessageBox.Show("Invalid input!") |> ignore
     else MessageBox.Show("Only Admins can add students!") |> ignore
 )
 
-btnEdit.Click.Add(fun _ ->
+btnEdit.Click.Add(fun _ -> 
     if isAdmin then
         try
             let id = int txtID.Text
@@ -326,6 +334,7 @@ btnEdit.Click.Add(fun _ ->
                 MessageBox.Show("Student details updated!") |> ignore
                 updateViewerPanel()
                 saveData()
+                clearInputFields() // Clear input fields after editing
             | None ->
                 MessageBox.Show("No student found with the given ID.") |> ignore
         with
@@ -341,6 +350,7 @@ btnRemove.Click.Add(fun _ ->
             MessageBox.Show("Student removed successfully!") |> ignore
             updateViewerPanel()
             saveData()
+            clearInputFields() // Clear input fields after deleting
         with
         | _ -> MessageBox.Show("Invalid input. Please check the fields.") |> ignore
     else
