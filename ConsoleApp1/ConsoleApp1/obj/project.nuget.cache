@@ -1,15 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "hnZMaSrOViG6r1Q4gcUp/4ZteOyNi9yUSf1t82XERD4L0KHuVwf/EV2a0WaFNb9tFx20DJu1SguvbziNg2xbUg==",
+  "dgSpecHash": "4bF0IKsfwAU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Marwan\\source\\repos\\student grades system\\student grades system\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+  "projectFilePath": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Marwan\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512",
-    "C:\\Users\\Marwan\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.0\\microsoft.win32.systemevents.9.0.0.nupkg.sha512",
-    "C:\\Users\\Marwan\\.nuget\\packages\\system.drawing.common\\9.0.0\\system.drawing.common.9.0.0.nupkg.sha512",
-    "C:\\Users\\Marwan\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
-    "C:\\Users\\Marwan\\.nuget\\packages\\system.reactive.windows.forms\\6.0.1\\system.reactive.windows.forms.6.0.1.nupkg.sha512",
-    "C:\\Users\\Marwan\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\fsharp.core\\9.0.100\\fsharp.core.9.0.100.nupkg.sha512",
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.0\\microsoft.win32.systemevents.9.0.0.nupkg.sha512",
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\system.drawing.common\\9.0.0\\system.drawing.common.9.0.0.nupkg.sha512",
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\system.reactive.windows.forms\\6.0.1\\system.reactive.windows.forms.6.0.1.nupkg.sha512",
+    "C:\\Users\\Marwan  magdy\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": [
     {
