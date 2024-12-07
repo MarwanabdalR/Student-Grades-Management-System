@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\",
+  "WorkspaceRootPath": "D:\\project f#\\Student-Grades-Management-System\\ConsoleApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A7071D8-1F99-4133-A8EB-4BA96DD36A18}|ConsoleApp1\\ConsoleApp1.fsproj|d:\\f#\\student-grades-management-system-main\\consoleapp1\\consoleapp1\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "AbsoluteMoniker": "D:0:0:{4A7071D8-1F99-4133-A8EB-4BA96DD36A18}|ConsoleApp1\\ConsoleApp1.fsproj|d:\\project f#\\student-grades-management-system\\consoleapp1\\consoleapp1\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
       "RelativeMoniker": "D:0:0:{4A7071D8-1F99-4133-A8EB-4BA96DD36A18}|ConsoleApp1\\ConsoleApp1.fsproj|solutionrelative:consoleapp1\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.fs",
-              "DocumentMoniker": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs",
+              "DocumentMoniker": "D:\\project f#\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\Program.fs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Program.fs",
-              "ToolTip": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs",
+              "ToolTip": "D:\\project f#\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\Program.fs",
               "RelativeToolTip": "ConsoleApp1\\Program.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAEkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-12-04T19:56:20.182Z",
               "EditorCaption": ""

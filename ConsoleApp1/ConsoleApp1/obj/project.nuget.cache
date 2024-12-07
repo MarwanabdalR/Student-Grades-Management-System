@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4bF0IKsfwAU=",
+  "dgSpecHash": "kqCc5KkSHGI=",
   "success": true,
-  "projectFilePath": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+  "projectFilePath": "D:\\project f#\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marwan  magdy\\.nuget\\packages\\fsharp.core\\9.0.100\\fsharp.core.9.0.100.nupkg.sha512",
     "C:\\Users\\Marwan  magdy\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.0\\microsoft.win32.systemevents.9.0.0.nupkg.sha512",
