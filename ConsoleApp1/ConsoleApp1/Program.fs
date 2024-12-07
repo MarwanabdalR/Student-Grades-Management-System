@@ -368,15 +368,24 @@ btnShowAllStudents.Click.Add(fun _ ->
 
 // Ensure login logic works
 btnLogin.Click.Add(fun _ -> 
-    if txtUsername.Text = "admin" && txtPassword.Text = "admin" then
+    let username = txtUsername.Text
+    let password = txtPassword.Text
+
+    // Check for admin credentials
+    if username = "admin" && password = "admin" then
         isAdmin <- true
         mainPanel.Controls.Clear()
         mainPanel.Controls.Add(adminPanel)
     else
-        isAdmin <- false
-        mainPanel.Controls.Clear()
-        updateViewerPanel()
-        mainPanel.Controls.Add(viewerPanel)
+        // Check if the entered username and password match any student record
+        match students |> List.tryFind (fun s -> s.Name = username && string s.ID = password) with
+        | Some student ->
+            isAdmin <- false // Set to viewer role
+            mainPanel.Controls.Clear()
+            updateViewerPanel() // Update the viewer panel with student data
+            mainPanel.Controls.Add(viewerPanel)
+        | None ->
+            MessageBox.Show("The username or ID is incorrect.") |> ignore
 )
 
 btnReturnToLogin.Click.Add(fun _ -> 
