@@ -56,19 +56,102 @@ let mainPanel = new Panel(Dock = DockStyle.Fill, BackColor = Color.FromArgb(32, 
 form.Controls.Add(mainPanel)
 
 // Admin Panel
-let adminPanel = new Panel(Dock = DockStyle.Fill, BackColor = Color.FromArgb(39, 174, 96), Padding = Padding(20))
-let adminTitle = new Label(Text = "Admin Panel", Dock = DockStyle.Top, Font = new Font("Arial", 16.0F, FontStyle.Bold), ForeColor = Color.White, TextAlign = ContentAlignment.MiddleCenter)
-let lblID = new Label(Text = "Student ID", ForeColor = Color.White, Dock = DockStyle.Top)
-let txtID = new TextBox(PlaceholderText = "Enter Student ID", Dock = DockStyle.Top)
-let lblName = new Label(Text = "Student Name", ForeColor = Color.White, Dock = DockStyle.Top)
-let txtName = new TextBox(PlaceholderText = "Enter Student Name", Dock = DockStyle.Top)
-let lblGrades = new Label(Text = "Grades (comma-separated)", ForeColor = Color.White, Dock = DockStyle.Top)
-let txtGrades = new TextBox(PlaceholderText = "Enter Grades", Dock = DockStyle.Top)
-let btnAdd = new Button(Text = "Add Student", Dock = DockStyle.Top, BackColor = Color.LimeGreen, ForeColor = Color.White)
-let btnEdit = new Button(Text = "Edit Student", Dock = DockStyle.Top, BackColor = Color.DodgerBlue, ForeColor = Color.White)
-let btnRemove = new Button(Text = "Remove Student", Dock = DockStyle.Top, BackColor = Color.Tomato, ForeColor = Color.White)
-let btnShowAllStudents = new Button(Text = "Show All Students", Dock = DockStyle.Top, BackColor = Color.LightGoldenrodYellow, ForeColor = Color.Black)
-let btnReturnToLogin = new Button(Text = "Return to Login", Dock = DockStyle.Bottom, BackColor = Color.LightSlateGray, ForeColor = Color.White)
+// Admin Panel Configuration
+let adminPanel = 
+    new Panel(
+        Dock = DockStyle.Fill, 
+        BackColor = Color.FromArgb(39, 174, 96), 
+        Padding = Padding(20)
+    )
+
+// Title Label
+let adminTitle = 
+    new Label(
+        Text = "Admin Panel", 
+        Font = new Font("Arial", 24.0F, FontStyle.Bold), 
+        ForeColor = Color.White, 
+        TextAlign = ContentAlignment.MiddleCenter,
+        AutoSize = true
+    )
+adminTitle.Location <- Point((adminPanel.Width - adminTitle.Width) / 2, 20)
+
+// Labels and TextBoxes
+let createLabel text yOffset =
+    let lbl = 
+        new Label(
+            Text = text, 
+            ForeColor = Color.White, 
+            Font = new Font("Arial", 12.0F, FontStyle.Bold), 
+            AutoSize = true
+        )
+    lbl.Location <- Point(50, yOffset)
+    lbl
+
+let createTextBox placeholder yOffset =
+    let txt = 
+        new TextBox(
+            PlaceholderText = placeholder, 
+            Width = 300, 
+            Height = 30, 
+            BackColor = Color.WhiteSmoke, 
+            ForeColor = Color.Black
+        )
+    txt.Location <- Point((adminPanel.Width - txt.Width) / 2, yOffset)
+    txt.Anchor <- AnchorStyles.None
+    txt
+
+let lblID = createLabel "Student ID" 80
+let txtID = createTextBox "Enter Student ID" 110
+
+let lblName = createLabel "Student Name" 160
+let txtName = createTextBox "Enter Student Name" 190
+
+let lblGrades = createLabel "Grades (comma-separated)" 240
+let txtGrades = createTextBox "Enter Grades" 270
+
+// Buttons
+let createButton text yOffset color =
+    let btn = 
+        new Button(
+            Text = text, 
+            Width = 250, 
+            Height = 40, 
+            BackColor = color, 
+            ForeColor = Color.White, 
+            FlatStyle = FlatStyle.Flat
+        )
+    btn.Location <- Point((adminPanel.Width - btn.Width) / 2, yOffset)
+    btn.Anchor <- AnchorStyles.None
+    btn.FlatAppearance.BorderSize <- 0
+    btn
+
+let btnAdd = createButton "Add Student" 330 Color.LimeGreen
+let btnEdit = createButton "Edit Student" 380 Color.DodgerBlue
+let btnRemove = createButton "Remove Student" 430 Color.Tomato
+let btnShowAllStudents = createButton "Show All Students" 480 Color.Goldenrod
+let btnReturnToLogin = createButton "Return to Login" 530 Color.LightSlateGray
+
+// Resize Event to Center Elements Dynamically
+adminPanel.Resize.Add(fun _ ->
+    adminTitle.Location <- Point((adminPanel.Width - adminTitle.Width) / 2, 20)
+    txtID.Location <- Point((adminPanel.Width - txtID.Width) / 2, 110)
+    txtName.Location <- Point((adminPanel.Width - txtName.Width) / 2, 190)
+    txtGrades.Location <- Point((adminPanel.Width - txtGrades.Width) / 2, 270)
+    btnAdd.Location <- Point((adminPanel.Width - btnAdd.Width) / 2, 330)
+    btnEdit.Location <- Point((adminPanel.Width - btnEdit.Width) / 2, 380)
+    btnRemove.Location <- Point((adminPanel.Width - btnRemove.Width) / 2, 430)
+    btnShowAllStudents.Location <- Point((adminPanel.Width - btnShowAllStudents.Width) / 2, 480)
+    btnReturnToLogin.Location <- Point((adminPanel.Width - btnReturnToLogin.Width) / 2, 530)
+)
+
+// Add Controls to Admin Panel
+adminPanel.Controls.AddRange([| 
+    adminTitle
+    lblID; txtID
+    lblName; txtName
+    lblGrades; txtGrades
+    btnAdd; btnEdit; btnRemove; btnShowAllStudents; btnReturnToLogin
+|])
 
 adminPanel.Controls.AddRange([| 
     adminTitle; lblID; txtID
@@ -78,20 +161,129 @@ adminPanel.Controls.AddRange([|
 |])
 
 // Viewer Panel
-let viewerPanel = new Panel(Dock = DockStyle.Fill, BackColor = Color.FromArgb(52, 73, 94), Padding = Padding(20))
-let viewerTitle = new Label(Text = "Viewer Panel", Dock = DockStyle.Top, Font = new Font("Arial", 16.0F, FontStyle.Bold), ForeColor = Color.White, TextAlign = ContentAlignment.MiddleCenter)
-let lstView = new ListBox(Dock = DockStyle.Top, Height = 250, BackColor = Color.WhiteSmoke)
-let statisticsLabel = new Label(Dock = DockStyle.Bottom, Font = new Font("Arial", 12.0F, FontStyle.Italic), ForeColor = Color.White)
-let btnBackToLoginViewer = new Button(Text = "Return to Login", Dock = DockStyle.Bottom, BackColor = Color.LightSlateGray, ForeColor = Color.White)
+// Viewer Panel Configuration
+let viewerPanel = 
+    new Panel(
+        Dock = DockStyle.Fill, 
+        BackColor = Color.FromArgb(52, 73, 94), 
+        Padding = Padding(20)
+    )
+
+// Title Label
+let viewerTitle = 
+    new Label(
+        Text = "Viewer Panel", 
+        Font = new Font("Arial", 24.0F, FontStyle.Bold), 
+        ForeColor = Color.White, 
+        TextAlign = ContentAlignment.MiddleCenter, 
+        AutoSize = true
+    )
+viewerTitle.Location <- Point((viewerPanel.Width - viewerTitle.Width) / 2, 20)
+
+// List Box for Viewing Students
+let lstView = 
+    new ListBox(
+        Width = 500, 
+        Height = 300, 
+        BackColor = Color.WhiteSmoke, 
+        ForeColor = Color.Black, 
+        Font = new Font("Arial", 10.0F, FontStyle.Regular)
+    )
+lstView.Location <- Point((viewerPanel.Width - lstView.Width) / 2, 80)
+lstView.Anchor <- AnchorStyles.None
+lstView.BorderStyle <- BorderStyle.FixedSingle
+
+// Statistics Label
+let statisticsLabel = 
+    new Label(
+        Text = "Statistics: (Will update dynamically)",
+        AutoSize = true,
+        Font = new Font("Arial", 12.0F, FontStyle.Italic), 
+        ForeColor = Color.White
+    )
+statisticsLabel.Location <- Point((viewerPanel.Width - statisticsLabel.Width) / 2, 400)
+
+// Button to Return to Login
+let btnBackToLoginViewer = 
+    new Button(
+        Text = "Return to Login", 
+        Width = 200, 
+        Height = 40, 
+        BackColor = Color.LightSlateGray, 
+        ForeColor = Color.White, 
+        FlatStyle = FlatStyle.Flat
+    )
+btnBackToLoginViewer.Location <- Point((viewerPanel.Width - btnBackToLoginViewer.Width) / 2, 460)
+btnBackToLoginViewer.FlatAppearance.BorderSize <- 0
+btnBackToLoginViewer.Anchor <- AnchorStyles.None
+
+// Resize Event for Centering Elements Dynamically
+viewerPanel.Resize.Add(fun _ ->
+    viewerTitle.Location <- Point((viewerPanel.Width - viewerTitle.Width) / 2, 20)
+    lstView.Location <- Point((viewerPanel.Width - lstView.Width) / 2, 80)
+    statisticsLabel.Location <- Point((viewerPanel.Width - statisticsLabel.Width) / 2, 400)
+    btnBackToLoginViewer.Location <- Point((viewerPanel.Width - btnBackToLoginViewer.Width) / 2, 460)
+)
+
+// Add Controls to Viewer Panel
+viewerPanel.Controls.AddRange([| 
+    viewerTitle; lstView; statisticsLabel; btnBackToLoginViewer 
+|])
 
 viewerPanel.Controls.AddRange([| viewerTitle; lstView; statisticsLabel; btnBackToLoginViewer |])
 
 // Login Panel
 let loginPanel = new Panel(Dock = DockStyle.Fill, BackColor = Color.FromArgb(41, 128, 185), Padding = Padding(20))
 let loginTitle = new Label(Text = "Login", Dock = DockStyle.Top, Font = new Font("Arial", 20.0F, FontStyle.Bold), ForeColor = Color.White, TextAlign = ContentAlignment.MiddleCenter)
-let txtUsername = new TextBox(PlaceholderText = "Username", Dock = DockStyle.Top)
-let txtPassword = new TextBox(PlaceholderText = "Password", PasswordChar = '*', Dock = DockStyle.Top)
-let btnLogin = new Button(Text = "Login", Dock = DockStyle.Top, BackColor = Color.MediumSeaGreen, ForeColor = Color.White)
+// Create and configure Username TextBox
+let txtUsername = 
+    new TextBox(
+        PlaceholderText = "Username",
+        Width = 300, // Set desired width
+        Height = 30, // Set desired height
+        BackColor = Color.WhiteSmoke,
+        ForeColor = Color.Black
+    )
+txtUsername.Location <- Point((loginPanel.Width - txtUsername.Width) / 2, 150) // Center horizontally
+txtUsername.Anchor <- AnchorStyles.None // Prevent automatic resizing
+
+// Create and configure Password TextBox
+let txtPassword = 
+    new TextBox(
+        PlaceholderText = "Password",
+        
+
+        PasswordChar = '*',
+        Width = 300, // Set desired width
+        Height = 60, // Set desired height
+        BackColor = Color.WhiteSmoke,
+        ForeColor = Color.Black
+    )
+txtPassword.Location <- Point((loginPanel.Width - txtPassword.Width) / 2, 200) // Center horizontally with vertical offset
+txtPassword.Anchor <- AnchorStyles.None // Prevent automatic resizing
+
+// Handle resizing to maintain centering
+loginPanel.Resize.Add(fun _ -> 
+    txtUsername.Location <- Point((loginPanel.Width - txtUsername.Width) / 2, 150)
+    txtPassword.Location <- Point((loginPanel.Width - txtPassword.Width) / 2, 200)
+)
+
+let btnLogin = 
+    new Button(
+        Text = "Login",
+        Height = 40,
+        Padding = Padding(15),
+        AutoSize = true,
+        BackColor = Color.MediumSeaGreen,
+        ForeColor = Color.White
+    )
+
+btnLogin.Location <- Point((loginPanel.Width - btnLogin.Width) / 2, 250)
+btnLogin.Anchor <- AnchorStyles.None
+
+loginPanel.Resize.Add(fun _ -> 
+    btnLogin.Location <- Point((loginPanel.Width - btnLogin.Width) / 2, 250)
+)
 
 loginPanel.Controls.AddRange([| loginTitle; txtUsername; txtPassword; btnLogin |])
 
