@@ -60,7 +60,7 @@ form.Controls.Add(mainPanel)
 let adminPanel = 
     new Panel(
         Dock = DockStyle.Fill, 
-        BackColor = Color.FromArgb(39, 174, 96), 
+        BackColor = Color.FromArgb(0.71, 0.875, 1), 
         Padding = Padding(20)
     )
 
