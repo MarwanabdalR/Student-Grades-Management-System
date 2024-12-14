@@ -211,6 +211,8 @@ viewerPanel.Controls.AddRange([|
 |])
 
 // Login Panel
+let loginPanel = new Panel(Dock = DockStyle.Fill, BackColor = Color.LightBlue, Padding = Padding(22))
+let loginTitle = new Label(Text = "Login", Dock = DockStyle.Top, Font = new Font("Arial", 20.0F, FontStyle.Bold), ForeColor = Color.DarkSlateGray, TextAlign = ContentAlignment.MiddleCenter)
 
 let txtUsername = 
     new TextBox(
