@@ -20,19 +20,6 @@ let dataFilePath = "students.json" // File to save and load data
 let calculateAverage (grades: int list) =
     if grades.IsEmpty then 0.0 else grades |> List.averageBy float
 
-let getClassStatistics students =
-    let allGrades = students |> List.collect (fun s -> s.Grades)
-    let average = if allGrades.IsEmpty then 0.0 else allGrades |> List.averageBy float
-    let highest = if allGrades.IsEmpty then 0 else List.max allGrades
-    let lowest = if allGrades.IsEmpty then 0 else List.min allGrades
-    let passRate =
-        if allGrades.IsEmpty then 0.0
-        else
-            let passed = allGrades |> List.filter (fun g -> g >= 50)
-            let passCount = float (List.length passed)
-            let totalCount = float (List.length allGrades)
-            (passCount / totalCount) * 100.0
-    (average, highest, lowest, passRate)
 
 // Save and Load Data
 let saveData () =
