@@ -369,7 +369,8 @@ btnShowAllStudents.Click.Add(fun _ ->
 // Ensure login logic works
 btnLogin.Click.Add(fun _ -> 
     let username = txtUsername.Text
-    let password = txtPassword.Text
+ 
+   
 
     // Check for admin credentials
     if username = "admin" && password = "admin" then
