@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\ConsoleApp1",
-    "\\ConsoleApp1\\ConsoleApp1"
+    "\\ConsoleApp1\\ConsoleApp1",
+    "\\ConsoleApp1\\ConsoleApp1\\bin",
+    "\\ConsoleApp1\\ConsoleApp1\\bin\\Debug",
+    "\\ConsoleApp1\\ConsoleApp1\\bin\\Debug\\net8.0-windows"
   ],
   "SelectedNode": "\\ConsoleApp1\\ConsoleApp1\\Program.fs",
   "PreviewInSolutionExplorer": false

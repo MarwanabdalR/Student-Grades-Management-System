@@ -12,10 +12,9 @@ type Student = {
 }
 
 // Application state
+let mutable students: list<Student> = []
 let mutable isAdmin = false // Default role as Viewer
 let dataFilePath = "students.json" // File to save and load data
-
-let mutable students: list<Student> = []
 
 // Helper functions
 let calculateAverage (grades: int list) =
@@ -26,17 +25,18 @@ let calculateAverage (grades: int list) =
 
 let getClassStatistics students =
     let allGrades = students |> List.collect (fun s -> s.Grades)
-    let average = if allGrades.IsEmpty then 0.0 else allGrades |> List.averageBy float
-    let highest = if allGrades.IsEmpty then 0 else List.max allGrades
-    let lowest = if allGrades.IsEmpty then 0 else List.min allGrades
-    let passRate =
-        if allGrades.IsEmpty then 0.0
-        else
+    match allGrades with
+    | [] -> (0.0, 0, 0, 0.0) // If there are no grades, return default values
+    | _ ->
+        let average = allGrades |> List.averageBy float
+        let highest = List.max allGrades
+        let lowest = List.min allGrades
+        let passRate =
             let passed = allGrades |> List.filter (fun g -> g >= 50)
             let passCount = float (List.length passed)
             let totalCount = float (List.length allGrades)
             (passCount / totalCount) * 100.0
-    (average, highest, lowest, passRate)
+        (average, highest, lowest, passRate)
 
 // Save and Load Data
 let saveData () =
@@ -136,7 +136,7 @@ let btnShowAllStudents = createButton "Show All Students" 480 Color.Goldenrod
 let btnReturnToLogin = createButton "Return to Login" 530 Color.LightSlateGray
 
 // Resize Event to Center Elements Dynamically
-adminPanel.Resize.Add(fun _ -> 
+adminPanel.Resize.Add(fun _ ->
     adminTitle.Location <- Point((adminPanel.Width - adminTitle.Width) / 2, 20)
     txtID.Location <- Point((adminPanel.Width - txtID.Width) / 2, 110)
     txtName.Location <- Point((adminPanel.Width - txtName.Width) / 2, 190)
@@ -152,6 +152,13 @@ adminPanel.Resize.Add(fun _ ->
 adminPanel.Controls.AddRange([| 
     adminTitle
     lblID; txtID
+    lblName; txtName
+    lblGrades; txtGrades
+    btnAdd; btnEdit; btnRemove; btnShowAllStudents; btnReturnToLogin
+|])
+
+adminPanel.Controls.AddRange([| 
+    adminTitle; lblID; txtID
     lblName; txtName
     lblGrades; txtGrades
     btnAdd; btnEdit; btnRemove; btnShowAllStudents; btnReturnToLogin
@@ -215,7 +222,7 @@ btnBackToLoginViewer.FlatAppearance.BorderSize <- 0
 btnBackToLoginViewer.Anchor <- AnchorStyles.None
 
 // Resize Event for Centering Elements Dynamically
-viewerPanel.Resize.Add(fun _ -> 
+viewerPanel.Resize.Add(fun _ ->
     viewerTitle.Location <- Point((viewerPanel.Width - viewerTitle.Width) / 2, 20)
     lstView.Location <- Point((viewerPanel.Width - lstView.Width) / 2, 80)
     statisticsLabel.Location <- Point((viewerPanel.Width - statisticsLabel.Width) / 2, 400)
@@ -226,6 +233,8 @@ viewerPanel.Resize.Add(fun _ ->
 viewerPanel.Controls.AddRange([| 
     viewerTitle; lstView; statisticsLabel; btnBackToLoginViewer 
 |])
+
+viewerPanel.Controls.AddRange([| viewerTitle; lstView; statisticsLabel; btnBackToLoginViewer |])
 
 // Login Panel
 let loginPanel = new Panel(Dock = DockStyle.Fill, BackColor = Color.FromArgb(41, 128, 185), Padding = Padding(20))
@@ -246,6 +255,8 @@ txtUsername.Anchor <- AnchorStyles.None // Prevent automatic resizing
 let txtPassword = 
     new TextBox(
         PlaceholderText = "Password",
+        
+
         PasswordChar = '*',
         Width = 300, // Set desired width
         Height = 60, // Set desired height
@@ -292,6 +303,33 @@ let updateViewerPanel() =
     let avg, high, low, passRate = getClassStatistics students
     statisticsLabel.Text <- sprintf "Class Avg: %.2f, High: %d, Low: %d, Pass Rate: %.2f%%" avg high low passRate
 
+
+
+
+
+
+let studentView(id) =
+    lstView.Items.Clear()
+    
+    // Find the student with the given id
+    match students |> List.tryFind (fun s -> s.ID = id) with
+    | Some(student) -> 
+        // Calculate the average for the selected student
+        let avg = calculateAverage student.Grades
+        // Display the student's ID, Name, and average
+        lstView.Items.Add(sprintf "ID: %d, Name: %s, Avg: %.2f" student.ID student.Name avg) |> ignore
+
+    | None -> 
+        // If the student with the given id is not found, display a message
+        lstView.Items.Add("Student not found.") |> ignore
+
+
+
+
+
+
+
+
 // Function to clear input fields
 let clearInputFields () =
     txtID.Clear()
@@ -324,11 +362,12 @@ btnEdit.Click.Add(fun _ ->
                 let name = txtName.Text
                 let grades = txtGrades.Text.Split(',') |> Array.map int |> Array.toList
                 students <- students |> List.map (fun s -> if s.ID = id then { s with Name = name; Grades = grades } else s)
-                MessageBox.Show("Student edited successfully!") |> ignore
+                MessageBox.Show("Student details updated!") |> ignore
                 updateViewerPanel()
                 saveData()
                 clearInputFields() // Clear input fields after editing
-            | None -> MessageBox.Show("Student not found!") |> ignore
+            | None ->
+                MessageBox.Show("No student found with the given ID.") |> ignore
         with
         | _ -> MessageBox.Show("Invalid input!") |> ignore
     else MessageBox.Show("Only Admins can edit students!") |> ignore
@@ -342,18 +381,43 @@ btnRemove.Click.Add(fun _ ->
             MessageBox.Show("Student removed successfully!") |> ignore
             updateViewerPanel()
             saveData()
-            clearInputFields() // Clear input fields after removing
+            clearInputFields() // Clear input fields after deleting
         with
-        | _ -> MessageBox.Show("Invalid input!") |> ignore
-    else MessageBox.Show("Only Admins can remove students!") |> ignore
+        | _ -> MessageBox.Show("Invalid input. Please check the fields.") |> ignore
+    else
+        MessageBox.Show("You do not have permission to remove students.") |> ignore
 )
 
-btnShowAllStudents.Click.Add(fun _ -> 
+btnShowAllStudents.Click.Add(fun _ ->
     if isAdmin then
         updateViewerPanel()
         mainPanel.Controls.Clear()
         mainPanel.Controls.Add(viewerPanel)
-    else MessageBox.Show("Only Admins can view students!") |> ignore
+    else
+        MessageBox.Show("You do not have permission to view all students.") |> ignore
+)
+
+// Ensure login logic works
+btnLogin.Click.Add(fun _ -> 
+    let username = txtUsername.Text
+    let password = txtPassword.Text
+
+    // Check for admin credentials
+    if username = "admin" && password = "admin" then
+        isAdmin <- true
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(adminPanel)
+    else
+        // Check if the entered username and password match any student record
+        match students |> List.tryFind (fun s -> s.Name = username && string s.ID = password) with
+        | Some student ->
+            isAdmin <- false // Set to viewer role
+            mainPanel.Controls.Clear()
+            // Update the viewer panel with the student's specific average
+            studentView(student.ID) // Use the student's ID to display their average
+            mainPanel.Controls.Add(viewerPanel)
+        | None ->
+            MessageBox.Show("The username or ID is incorrect.") |> ignore
 )
 
 btnReturnToLogin.Click.Add(fun _ -> 
@@ -366,15 +430,5 @@ btnBackToLoginViewer.Click.Add(fun _ ->
     mainPanel.Controls.Add(loginPanel)
 )
 
-btnLogin.Click.Add(fun _ -> 
-    let username = txtUsername.Text
-    let password = txtPassword.Text
-    if username = "admin" && password = "admin" then
-        isAdmin <- true
-        mainPanel.Controls.Clear()
-        mainPanel.Controls.Add(adminPanel)
-    else
-        MessageBox.Show("Invalid username or password!") |> ignore
-)
-
+loadData() // Load existing students
 Application.Run(form)
