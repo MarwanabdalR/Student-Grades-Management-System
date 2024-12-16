@@ -19,7 +19,10 @@ let mutable students: list<Student> = []
 
 // Helper functions
 let calculateAverage (grades: int list) =
-    if grades.IsEmpty then 0.0 else grades |> List.averageBy float
+    // if grades.IsEmpty then 0.0 else grades |> List.averageBy float
+    match grades with
+    | [] -> 0.0 // If the list is empty, return 0.0
+    | _ -> grades |> List.averageBy float // Otherwise, calculate the average
 
 let getClassStatistics students =
     let allGrades = students |> List.collect (fun s -> s.Grades)
