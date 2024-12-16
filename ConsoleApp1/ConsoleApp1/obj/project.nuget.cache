@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0rjvfyfA/Q7v76W6c9GzD+2MVVTdKtnEn86HqEszC7yf7jdpDNxvmXWJvka3IsFGD6hghQ/HTeRJxLFi8CW8Fw==",
+  "dgSpecHash": "qRVqnfLqzN37JlnIB+7yjfh8KOTdwBGvYklFkIFm9MbLm70jwsOWLINT/hCuKbaVwLjblegJskhQbeKVQZ4yWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Marwan\\Desktop\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+  "projectFilePath": "C:\\Users\\Marwan\\Desktop\\البروجكت شغاال\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marwan\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512",
     "C:\\Users\\Marwan\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.0\\microsoft.win32.systemevents.9.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marwan\\Desktop\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj": {}
+    "C:\\Users\\Marwan\\Desktop\\البروجكت شغاال\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Marwan\\Desktop\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj": {
+    "C:\\Users\\Marwan\\Desktop\\البروجكت شغاال\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marwan\\Desktop\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+        "projectUniqueName": "C:\\Users\\Marwan\\Desktop\\البروجكت شغاال\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Marwan\\Desktop\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+        "projectPath": "C:\\Users\\Marwan\\Desktop\\البروجكت شغاال\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
         "packagesPath": "C:\\Users\\Marwan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marwan\\Desktop\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\Marwan\\Desktop\\البروجكت شغاال\\Student-Grades-Management-System\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Marwan\\AppData\\Roaming\\NuGet\\NuGet.Config",

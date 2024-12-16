@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleApp1")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ebb5f291986b94498f8266f673a1157e4d0f6ab")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cae2489b8e1f55020b575d4b0fab6ca89beaeb8")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("ConsoleApp1")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("ConsoleApp1")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

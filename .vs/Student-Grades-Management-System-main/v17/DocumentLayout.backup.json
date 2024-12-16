@@ -1,18 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\project f#\\project\\Student-Grades-Management-System-main\\",
+  "WorkspaceRootPath": "D:\\f#\\Student-Grades-Management-System-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConsoleApp1\\ConsoleApp1\\Program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\GUI.fs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConsoleApp1\\ConsoleApp1\\GUI.fs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.101\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Student_Sys.fs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConsoleApp1\\ConsoleApp1\\Student_Sys.fs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,38 +26,36 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Student_Sys.fs",
-              "DocumentMoniker": "D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Student_Sys.fs",
-              "RelativeDocumentMoniker": "ConsoleApp1\\ConsoleApp1\\Student_Sys.fs",
-              "ToolTip": "D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Student_Sys.fs",
-              "RelativeToolTip": "ConsoleApp1\\ConsoleApp1\\Student_Sys.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T20:29:13.642Z",
+              "Title": "ConsoleApp1.fsproj",
+              "DocumentMoniker": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+              "RelativeDocumentMoniker": "ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+              "ToolTip": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+              "RelativeToolTip": "ConsoleApp1\\ConsoleApp1\\ConsoleApp1.fsproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001351|",
+              "WhenOpened": "2024-12-05T17:21:49.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GUI.fs",
-              "DocumentMoniker": "D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\GUI.fs",
-              "RelativeDocumentMoniker": "ConsoleApp1\\ConsoleApp1\\GUI.fs",
-              "ToolTip": "D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\GUI.fs",
-              "RelativeToolTip": "ConsoleApp1\\ConsoleApp1\\GUI.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T20:28:43.999Z",
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAAABAAAAAAAAAAAtwA4BAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-12-05T17:19:27.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.fs",
-              "DocumentMoniker": "D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs",
+              "DocumentMoniker": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs",
               "RelativeDocumentMoniker": "ConsoleApp1\\ConsoleApp1\\Program.fs",
-              "ToolTip": "D:\\project f#\\project\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs",
+              "ToolTip": "D:\\f#\\Student-Grades-Management-System-main\\ConsoleApp1\\ConsoleApp1\\Program.fs",
               "RelativeToolTip": "ConsoleApp1\\ConsoleApp1\\Program.fs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALIAAAAAAAAAAAAowL4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-12-05T17:05:58.307Z",
               "EditorCaption": ""
