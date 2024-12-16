@@ -4,29 +4,28 @@ open System.Drawing
 open System.IO
 open Newtonsoft.Json
 
-// Define student record
 type Student = {
     ID: int
     Name: string
     Grades: list<int>
 }
 
-// Application state
-let mutable students: list<Student> = []
-let mutable isAdmin = false // Default role as Viewer
-let dataFilePath = "students.json" // File to save and load data
 
-// Helper functions
+let mutable students: list<Student> = []
+let mutable isAdmin = false 
+let dataFilePath = "students.json" // ummutablr
+
+// functions
 let calculateAverage (grades: int list) =
     // if grades.IsEmpty then 0.0 else grades |> List.averageBy float
     match grades with
-    | [] -> 0.0 // If the list is empty, return 0.0
-    | _ -> grades |> List.averageBy float // Otherwise, calculate the average
+    | [] -> 0.0 
+    | _ -> grades |> List.averageBy float 
 
 let getClassStatistics students =
     let allGrades = students |> List.collect (fun s -> s.Grades)
     match allGrades with
-    | [] -> (0.0, 0, 0, 0.0) // If there are no grades, return default values
+    | [] -> (0.0, 0, 0, 0.0) 
     | _ ->
         let average = allGrades |> List.averageBy float
         let highest = List.max allGrades
@@ -347,7 +346,7 @@ btnAdd.Click.Add(fun _ ->
             MessageBox.Show("Student added successfully!") |> ignore
             updateViewerPanel()
             saveData()
-            clearInputFields() // Clear input fields after adding
+            clearInputFields() 
         with
         | _ -> MessageBox.Show("Invalid input!") |> ignore
     else MessageBox.Show("Only Admins can add students!") |> ignore
@@ -365,7 +364,7 @@ btnEdit.Click.Add(fun _ ->
                 MessageBox.Show("Student details updated!") |> ignore
                 updateViewerPanel()
                 saveData()
-                clearInputFields() // Clear input fields after editing
+                clearInputFields() 
             | None ->
                 MessageBox.Show("No student found with the given ID.") |> ignore
         with
@@ -381,7 +380,7 @@ btnRemove.Click.Add(fun _ ->
             MessageBox.Show("Student removed successfully!") |> ignore
             updateViewerPanel()
             saveData()
-            clearInputFields() // Clear input fields after deleting
+            clearInputFields()
         with
         | _ -> MessageBox.Show("Invalid input. Please check the fields.") |> ignore
     else
@@ -430,5 +429,5 @@ btnBackToLoginViewer.Click.Add(fun _ ->
     mainPanel.Controls.Add(loginPanel)
 )
 
-loadData() // Load existing students
+loadData() 
 Application.Run(form)
